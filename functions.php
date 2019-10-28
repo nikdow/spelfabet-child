@@ -31,6 +31,22 @@ function orbisius_ctc_twentytwelve_child_theme_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
 }
+add_filter( 'woocommerce_email_enabled_new_order', function($yesno, $object){
+	return false;
+  }, 10, 2);
+/**
+ * Disabling the completed order notification.
+ * 
+ * @copyright 2019 PaulChimnoy.com
+ * @author Paul Chinmoy
+ */
+//add_action( 'woocommerce_email', 'paulc_disable_new_order_email' );
+function paulc_disable_new_order_email( $email_class ) {
+		
+	// Completed order emails
+	remove_action( 'woocommerce_email_enabled_new_order', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+		
+}
 
 add_action( 'wp_enqueue_scripts', 'orbisius_ctc_twentytwelve_child_theme_enqueue_styles' );
 
