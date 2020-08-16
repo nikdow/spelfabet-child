@@ -17,7 +17,7 @@
  */
 function orbisius_ctc_twentytwelve_child_theme_enqueue_styles() {
     $parent_style = 'orbisius_ctc_twentytwelve_parent_style';
-    $parent_base_dir = 'twentytwelve3';
+    $parent_base_dir = 'twentytwelve';
 
     wp_enqueue_style( $parent_style,
         get_template_directory_uri() . '/style.css',
