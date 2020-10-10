@@ -14,3 +14,6 @@ Version: 2.3
 .header-image{
     float: right;
 }
+.site-header {
+    float: left;
+}
